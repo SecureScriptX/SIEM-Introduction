@@ -1,0 +1,19 @@
+# Log Storage
+
+Storing incoming logs:
+
+A common oversight in SIEM structures is overly emphasizing storage size without considering data access speed. While having ample storage capacity is crucial, the efficiency of accessing data is equally important. For instance, imagine collecting logs from various sources such as WAF, Firewall, Proxy, etc., and it takes 15 minutes to perform a search within these logs. In such situations, the difficulty in accessing data can significantly impact productivity. Therefore, storage solutions should not only prioritize size but also the speed of data access.
+
+When examining popular storage technologies in the market (e.g., MySQL), the emphasis is often on adding, editing, and deleting data. However, our focus lies in indexing the data, with no intention of editing stored logs later. The primary objective is to access data rapidly. To achieve this, technologies based on WORM (Write Once Read Many) are more suitable for SIEM usage.
+
+The results of the first query were noticeably slow, whereas the second query yielded instant results. While minor delays during investigations or the processing of incoming data are acceptable, excessive delays can pose a significant risk.
+
+## Quiz Questions:
+
+1. Is data update (change value, delete value, etc.) very important for SIEM data storage? [Y/N] NO
+
+2. Which one is the most important factor for SIEM storage?
+
+   - Speed
+
+
